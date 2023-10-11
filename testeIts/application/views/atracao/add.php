@@ -1,41 +1,42 @@
 <?php echo form_open('atracao/add', array("class" => "form-horizontal", "enctype" => "multipart/form-data")); ?>
-	<div class="form-group">
-		<label for="nome_atracao" class="col-md-4 control-label">Nome Atração</label>
-		<div class="col-md-4">
-			<input type="text" name="nome_atracao" value="<?php echo $this->input->post('nome_atracao'); ?>" class="form-control" id="nome_atracao" />
-		</div>
-	</div>
-	<div class="form-group">
-		<label for="data" class="col-md-4 control-label">Data da Atração</label>
-		<div class="col-md-4">
-			<input id="date" type="date" name="data" value="<?php echo $this->input->post('data'); ?>" class="form-control" id="data"/>
-		</div>
-	</div>
-	
-	<div class="form-group">
-		<label for="descricao" class="col-md-4 control-label">Descrição</label>
-		<div class="col-md-4">
-			<input type="text" name="descricao" value="<?php echo $this->input->post('descricao'); ?>" class="form-control descricao" id="descricao" />
-		</div>
-	</div>
-
-	<div class="form-group">
-		<label for="descricao" class="col-md-4 control-label">Flyer</label>
-		<picture>
-		    <input name="flyer" type="file" id="fileInput">
-		</picture>
-		<img id="imagePreview" src="#" alt="Pré-visualização da Imagem" style="display: none; max-width: 100%; max-height: 200px;">
-	</div>
-	
-	
-	<div class="form-group">
-		<div class="col-sm-offset-4 col-sm-8">
-			<button type="submit" class="btn btn-success">Salvar</button>
-			<?php echo anchor('atracao/index', 'Voltar', ['class' => 'btn btn-info']); ?>
+    <div class="form-group">
+        <label for="nome_atracao" class="col-md-4 control-label">Nome Atração</label>
+        <div class="col-md-4">
+            <input type="text" name="nome_atracao" value="<?php echo $this->input->post('nome_atracao'); ?>" class="form-control" id="nome_atracao" />
         </div>
-	</div>
+    </div>
+    <div class="form-group">
+        <label for="data" class="col-md-4 control-label">Data da Atração</label>
+        <div class="col-md-4">
+            <label for="datetime">Selecione uma data e hora:</label>
+            <input id="date" name="data" type="datetime-local" id="datetime" value="<?php echo $this->input->post('data'); ?>" />
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="descricao" class="col-md-4 control-label">Descrição</label>
+        <div class="col-md-4">
+            <input type="text" name="descricao" value="<?php echo $this->input->post('descricao'); ?>" class="form-control descricao" id="descricao" />
+        </div>
+    </div>
 
-	<script>
+    <div class="form-group">
+        <label for="descricao" class="col-md-4 control-label">Flyer</label>
+        <picture>
+            <input name="flyer" type="file" id="fileInput">
+        </picture>
+        <img id="imagePreview" src="#" alt="Pré-visualização da Imagem" style="display: none; max-width: 100%; max-height: 200px;">
+    </div>
+    
+    
+    <div class="form-group">
+        <div class="col-sm-offset-4 col-sm-8">
+            <button type="submit" class="btn btn-success">Salvar</button>
+            <?php echo anchor('atracao/index', 'Voltar', ['class' => 'btn btn-info']); ?>
+        </div>
+    </div>
+
+    <script>
     // Variável para rastrear se o Swiper já foi iniciado
     var swiperIniciado = false;
 

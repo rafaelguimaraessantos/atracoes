@@ -50,7 +50,7 @@ class Atracao extends CI_Controller {
                 redirect('atracao/index');
             } else {
                 $error = $this->upload->display_errors();
-                echo('tamanho ou formato de imagem não suportada ');
+                echo('Tamanho, formato de imagem não suportada ou falta de permissão para salvar a imagem na pasta uploads.');
 
                 echo anchor('atracao/add', 'Adicionar uma nova atracao', ['class' => 'btn btn-primary']); 
             }
